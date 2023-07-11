@@ -4,8 +4,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        classpath 'com.android.tools.build:gradle:8.0.2'
     }
 }
 
@@ -23,11 +22,11 @@ allprojects {
         versionCode = 8
         versionName = '1.1.0'
 
-        annotationVersion = '1.1.0-alpha01'
-        preferenceVersion = '1.1.0-alpha03'
+        annotationVersion = '1.7.0-alpha02'
+        preferenceVersion = '1.2.0'
         preferencev14Version = '1.0.0'
-        appCompatVersion = '1.1.0-alpha02'
-        materialVersion = '1.1.0-alpha03'
+        appCompatVersion = '1.7.0-alpha02'
+        materialVersion = '1.11.0-alpha01'
     }
 }
 
@@ -35,4 +34,10 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-
+subprojects{
+    afterEvaluate {
+        android {
+            namespace 'com.github.kizitonwose'
+        }
+    }
+}
